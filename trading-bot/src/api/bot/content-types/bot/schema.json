@@ -53,6 +53,17 @@
     },
     "stopLossPercentage": {
       "type": "float"
+    },
+    "orders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order.order",
+      "mappedBy": "botID"
+    },
+    "isOn": {
+      "type": "boolean",
+      "default": true,
+      "required": true
     }
   }
 }

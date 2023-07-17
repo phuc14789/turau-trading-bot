@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "Order",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "averagePrice": {
+      "type": "float",
+      "required": true
+    },
+    "executedQuantity": {
+      "type": "float",
+      "required": true
+    },
+    "executedAmount": {
+      "type": "float",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "BUY",
+        "SELL"
+      ]
+    },
+    "botID": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::bot.bot",
+      "inversedBy": "orders"
+    },
+    "step": {
+      "type": "integer"
+    }
+  }
+}
